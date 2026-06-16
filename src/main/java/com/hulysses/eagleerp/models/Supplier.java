@@ -1,6 +1,7 @@
 package com.hulysses.eagleerp.models;
 
 public class Supplier {
+    private Long id;
     private String name;
     private String email;
     private String phone;
@@ -11,6 +12,14 @@ public class Supplier {
         this.name = name;
         this.phone = phone;
         this.cnpj = cnpj;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
