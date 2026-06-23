@@ -1,6 +1,4 @@
-package com.hulysses.eagleerp.models;
-
-import java.math.BigDecimal;
+package com.hulysses.eagleerp.product;
 
 public class Product {
     private Long id;

@@ -1,4 +1,4 @@
-package com.hulysses.eagleerp.models;
+package com.hulysses.eagleerp.supplier;
 
 public class Supplier {
     private Long id;

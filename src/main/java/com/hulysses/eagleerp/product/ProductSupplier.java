@@ -1,4 +1,6 @@
-package com.hulysses.eagleerp.models;
+package com.hulysses.eagleerp.product;
+
+import com.hulysses.eagleerp.supplier.Supplier;
 
 import java.math.BigDecimal;
 
