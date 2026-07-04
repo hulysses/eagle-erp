@@ -9,11 +9,26 @@ public class Supplier {
     private String cnpj;
 
     public Supplier(String name, String email, String phone, String address, String cnpj) {
+        validateName(name);
+        validateCnpj(cnpj);
+
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.address = address;
         this.cnpj = cnpj;
+    }
+
+    private void validateName(String name) {
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("Supplier name is required.");
+        }
+    }
+
+    private void validateCnpj(String cnpj) {
+        if (cnpj == null || cnpj.isBlank()) {
+            throw new IllegalArgumentException("Supplier CNPJ is required.");
+        }
     }
 
     public Long getId() {
