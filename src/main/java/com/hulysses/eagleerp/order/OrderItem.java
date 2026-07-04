@@ -8,7 +8,7 @@ public class OrderItem {
     private Product product;
     private Integer quantity;
 
-    public OrderItem(Product product, Integer quantity) {
+    protected OrderItem(Product product, Integer quantity) {
         validateProduct(product);
         validateQuantity(quantity);
 

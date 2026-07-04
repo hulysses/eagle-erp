@@ -1,34 +1,35 @@
 package com.hulysses.eagleerp.order;
 
 import com.hulysses.eagleerp.payment.PaymentMethodEnum;
+import com.hulysses.eagleerp.product.Product;
 import com.hulysses.eagleerp.supplier.Supplier;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PurchaseOrder {
     private Long id;
-    private List<OrderItem> items;
+    private final List<OrderItem> items = new ArrayList<>();
     private Supplier supplier;
     private PaymentMethodEnum paymentMethod;
 
-    public PurchaseOrder(List<OrderItem> items, Supplier supplier, PaymentMethodEnum paymentMethod) {
+    public PurchaseOrder(Supplier supplier, PaymentMethodEnum paymentMethod) {
         validateSupplier(supplier);
         validatePaymentMethod(paymentMethod);
 
-        this.items = items;
         this.supplier = supplier;
         this.paymentMethod = paymentMethod;
     }
 
-    public void addItem(OrderItem item) {
-        validateItem(item);
+    public void addItem(Product product, Integer quantity) {
+        OrderItem item = new OrderItem(product, quantity);
         items.add(item);
     }
 
-    public void removeItem(OrderItem item) {
-        validateItem(item);
-        items.remove(item);
+    public void removeItem(Product product) {
+        items.removeIf(item ->
+                item.getProduct().equals(product));
     }
 
     public BigDecimal calculateTotal() {
@@ -50,12 +51,6 @@ public class PurchaseOrder {
     private void validatePaymentMethod(PaymentMethodEnum paymentMethod) {
         if (paymentMethod == null) {
             throw new InvalidOrderException("Payment method is required.");
-        }
-    }
-
-    private void validateItem(OrderItem item) {
-        if (item == null) {
-            throw new InvalidOrderException("Order item is required.");
         }
     }
 
