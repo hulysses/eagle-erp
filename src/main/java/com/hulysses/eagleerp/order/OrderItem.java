@@ -2,11 +2,13 @@ package com.hulysses.eagleerp.order;
 
 import com.hulysses.eagleerp.product.Product;
 
+import java.math.BigDecimal;
+
 public class OrderItem {
     private Product product;
-    private int quantity;
+    private Integer quantity;
 
-    public OrderItem(Product product, int quantity) {
+    public OrderItem(Product product, Integer quantity) {
         this.product = product;
         this.quantity = quantity;
     }
@@ -19,11 +21,11 @@ public class OrderItem {
         this.product = product;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 }
