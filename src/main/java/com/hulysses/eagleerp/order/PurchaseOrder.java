@@ -67,6 +67,6 @@ public class PurchaseOrder {
     }
 
     public List<OrderItem> getItems() {
-        return items;
+        return new ArrayList<>(items);
     }
 }

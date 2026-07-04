@@ -39,6 +39,10 @@ public class PurchaseOrderService {
     }
 
     private void validateOrder(PurchaseOrder order) {
+        if (order == null) {
+            throw new InvalidOrderException("Purchase order is required.");
+        }
+
         if (!order.hasItems()) {
             throw new InvalidOrderException("Purchase order must have at least one item.");
         }

@@ -14,6 +14,6 @@ public class PurchaseOrderRepository {
     }
 
     public List<PurchaseOrder> findAll() {
-        return orders;
+        return new ArrayList<>(orders);
     }
 }
