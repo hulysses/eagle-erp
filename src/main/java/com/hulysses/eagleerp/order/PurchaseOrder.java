@@ -65,4 +65,8 @@ public class PurchaseOrder {
     public PaymentMethodEnum getPaymentMethod() {
         return paymentMethod;
     }
+
+    public List<OrderItem> getItems() {
+        return items;
+    }
 }
