@@ -1,4 +1,4 @@
-package com.hulysses.eagleerp.payment;
+package com.hulysses.eagleerp.payment.strategy;
 
 import com.hulysses.eagleerp.order.PurchaseOrder;
 
